@@ -1,0 +1,10 @@
+# Project exclude paths
+.settings
+.classpath
+.project
+target
+.idea
+hengji-server.iml
+*.iml
+plugin-log.jar
+out

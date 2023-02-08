@@ -1,0 +1,41 @@
+<idea-plugin>
+
+  <description>
+    <![CDATA[
+        <p>
+		   Adds a new action 'logger' in the generate menu (alt + ins). The action adds an
+		   LOGGER field in the current class or updates it if it already exists.
+		   The action is only visible when the class either no LOGGER field exists.
+	    </p>      ]]>
+  </description>
+  <name>GenerateLogger</name>
+  <version>1.0</version>
+  <vendor email="descout underscore olivier at yahoo dot fr">Olivier Descout</vendor>
+  <change-notes><![CDATA[
+     <p> first version </p>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="GenerateLogger"
+            class="org.intellij.plugins.log.GenerateLoggerAction"
+            text="LOGGER"
+            description="Generates a LOGGER field">
+      <add-to-group group-id="GenerateGroup" anchor="after" relative-to-action="GenerateEquals" />
+    </action>
+  </actions>
+
+</idea-plugin>
